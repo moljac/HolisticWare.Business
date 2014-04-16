@@ -172,3 +172,14 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+
+
+#-------------------------------------------------------------------------------------------
+# Ignores on HolisticWare projects
+
+.git.bitbucket/*
+**/*.DS_Store
+**/*.suo
+**/*.csproj.user
+**/*.userprefs

@@ -1,0 +1,226 @@
+﻿@model HolisticWare.Business.BusinessLogicModel.Financial.Expenses
+@{
+
+	ViewBag.Title = "Expenses";
+}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style>
+.webgrid
+{
+	 width: 100%;
+	 border: 0px;
+	 border-collapse: collapse;
+	 white-space:nowrap;
+	 font-size: xx-small;
+ }
+
+.webgrid 
+, table
+, thead
+{
+	 width: 100%;
+}
+.des 
+{
+	width:50%;
+}
+
+.webgrid a
+{
+	color: #000;
+}
+
+.webgrid-header
+{
+	padding: 6px 5px;
+	text-align: center;
+	background-color: #e8eef4;
+	border-bottom: 2px solid #3966A2;
+	height: 40px;
+	border-top: 2px solid #D6E8FF;
+	border-left: 2px solid #D6E8FF;
+	border-right: 2px solid #D6E8FF;
+}
+
+.webgrid-footer
+{
+	padding: 6px 5px;
+	text-align: center;
+	background-color: #e8eef4;
+	border-top: 2px solid #3966A2;
+	height: 30px;
+	border-bottom: 2px solid #D6E8FF;
+	border-left: 2px solid #D6E8FF;
+	border-right: 2px solid #D6E8FF;
+}
+
+.webgrid-alternating-row
+{
+	height: 30px;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #d2d2d2;
+	border-left: 2px solid #D6E8FF;
+	border-right: 2px solid #D6E8FF;
+}		
+	</style>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<!--
+		<label for="username" class="col-sm-2 control-label">
+			Username:
+		</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="username" placeholder="Username"/>
+		</div>
+
+		<label for="status" class="col-sm-2 control-label">
+			Status:
+		</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="status" placeholder="Status"/>
+		</div>
+
+		<label for="latitude" class="col-sm-2 control-label">
+			Latitude:
+		</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="latitude" placeholder="Latitude"/>
+		</div>
+
+		<label for="longitude" class="col-sm-2 control-label">
+			Longitude:
+		</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="longitude" placeholder="Longitude"/>
+		</div>
+
+		<div class="col-sm-offset-2 col-sm-10">
+			<button class="btn btn-primary" id="send">Send Message</button>
+			<button class="btn btn-primary" id="generate">Generate</button>
+		</div>
+		-->
+		<div class="col-sm-12">
+			<!--
+			==========================================================================================================
+			-->	
+			<div class="webgrid-wrapper" >
+				<div class="webgrid-title">Tracker Data</div>
+				<div>
+					@using(Html.BeginForm(null, null, FormMethod.Get))
+					{
+						<fieldset>
+							<legend>Search criteria</legend>		
+							<div >
+								<!-- Oneliner -->
+								@Html.Label("search_name_last", "Name last: ", new { /*@class = "webgrid-row-style"*/ })
+								@Html.TextBox("search_name_last", "X ", new { /*@class = "webgrid-row-style"*/ })
+								
+								@Html.Label("search_name_first", "Name first: ", new { /*@class = "webgrid-row-style"*/ })
+								@Html.TextBox("search_name_first", "X ", new { /*@class = "webgrid-row-style"*/ })
+
+								@Html.Label("search_name_expenses", "Expenses: ", new { /*@class = "webgrid-row-style"*/ })
+								@Html.TextBox("search_name_expenses", "0.0 ", new { /*@class = "webgrid-row-style"*/ })
+								<!--
+								<input type="submit" value="Generate" />
+
+								<input 
+									type="button" value="Generate" 
+									onclick="location.href='<%: Url.Action("Action", "Controller") %>" 
+									/>
+
+								-->
+
+								<input type="button" value="Create" onclick="location.href='@Url.Action("ExpensesTravelLocal", "Financial")'" />
+							</div>
+						</fieldset>
+					}
+					@{
+						WebGrid grid = new WebGrid
+												(
+												 Model
+												, defaultSort: ""
+												, rowsPerPage: 500
+												);
+						var html = grid.GetHtml
+							(
+							  tableStyle: "webgrid"
+							, headerStyle: "webgrid-header"
+							, footerStyle: "webgrid-footer"
+							, alternatingRowStyle: "webgrid-alternating-row"
+							, selectedRowStyle: "webgrid-selected-row"
+							, rowStyle: "webgrid-row-style"					
+							@*
+							, columns: grid.Columns
+											(
+											  grid.Column
+													(
+													  "Name Last"
+													, format: @<text>@item.NameFirst</text>
+													)
+											, grid.Column
+													(
+													  "Name Last"
+													, format: @<text>@item.NameLast</text>
+													)
+											, grid.Column
+													(
+														format:
+															(item)
+																=>
+															Html.ActionLink
+																	(
+																	  "Edit"
+																	, "Edit"
+																	, new { id = item.NameLast }
+																	)
+													)
+											, grid.Column
+													(
+														format:
+															(item)
+																=>
+															Html.ActionLink
+																	(
+																	  "Delete"
+																	, "Delete"
+																	, new { id = item.NameLast }
+																	)
+													)
+											)
+							*@
+							);
+						@html;
+					}	
+				</div>
+			</div>
+			<!--
+			==========================================================================================================
+			-->
+		</div>
+
+		<!--
+		inputs should not be inside forms - otherwise new requests/signalr reloading
+		new sessionid
+
+		<form class="form-horizontal" >
+			<div class="form-group">
+			</div>
+		</form>
+		-->
+
+		<!--
+		<div class="col-sm-12">
+			<footer>
+			</footer>
+				<p>&copy; HolisticWare 2014</p>
+				<hr />
+				
+		</div>
+		-->
+
+	</div>
+</body>
