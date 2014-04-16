@@ -1,10 +1,8 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Business.Application.ASPnet", "HolisticWare.Business.Application.ASPnet\HolisticWare.Business.Application.ASPnet.csproj", "{C19DEA1E-3168-4BD8-83EA-46F3047BC542}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Business.BusinessLogicModel.SharedCommon", "HolisticWare.Business.BusinessLogicModel.SharedCommon\HolisticWare.Business.BusinessLogicModel.SharedCommon.csproj", "{C395B84A-2ABF-415B-8AB5-10C478833294}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Business.Data.SharedCommon", "HolisticWare.Business.Data.SharedCommon\HolisticWare.Business.Data.SharedCommon.csproj", "{89B960F5-87A2-4EDC-BE45-4C6B4A7F26DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +18,6 @@ Global
 		{C395B84A-2ABF-415B-8AB5-10C478833294}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C395B84A-2ABF-415B-8AB5-10C478833294}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C395B84A-2ABF-415B-8AB5-10C478833294}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89B960F5-87A2-4EDC-BE45-4C6B4A7F26DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89B960F5-87A2-4EDC-BE45-4C6B4A7F26DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89B960F5-87A2-4EDC-BE45-4C6B4A7F26DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89B960F5-87A2-4EDC-BE45-4C6B4A7F26DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

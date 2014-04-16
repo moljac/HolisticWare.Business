@@ -7,12 +7,12 @@ using System.Web.Http;
 
 namespace HolisticWare.Business.Application.Controllers
 {
-	public class ValuesController : ApiController
+	public class EmployeesController : ApiController
 	{
 		// GET api/values
-		public IEnumerable<string> Get()
+		public IEnumerable<Employee> Get()
 		{
-			return new string[] { "value1", "value2" };
+			return ;
 		}
 
 		// GET api/values/5
